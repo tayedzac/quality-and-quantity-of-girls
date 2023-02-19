@@ -32,15 +32,18 @@ clean_data <- read_csv(here::here("inputs/data/clean_data.csv"))
 
 clean_data |>
   ggplot(aes(x = year)) +
-  geom_line(aes(y = ultrasound_birth), color = "blue") +
-  geom_line(aes(y = changed_column), lty=2, lwd=1, color = "red") +
+  geom_line(aes(y = ultrasound_birth, color = "Births with Ultrasound")) +
+  geom_line(aes(y = changed_column, color = "Imported Machines"), lty=2, lwd=1) +
   scale_y_continuous(
     name = "Fraction of Births with Ultrasound Use",
     sec.axis = sec_axis( ~.*1, name = "Imported Ultrasound Machines")
   ) +
   theme_minimal() +
   labs(x = "Year",
-       title = "Ultrasound Use by Mothers vs. Supply of Ultrasound Scanners in India.")
+       title = "Ultrasound Use by Mothers vs. Supply of Ultrasound Scanners in India.")+
+  scale_color_manual(name = "Legend", values = c("Births with Ultrasound" = "blue", "Imported Machines" = "red")) + 
+  theme(legend.key.size = unit(0.3, 'cm')) +
+  theme(legend.position="bottom")
 ```
 
 ```{r}
