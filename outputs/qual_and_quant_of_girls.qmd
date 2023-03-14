@@ -1,6 +1,6 @@
 ---
 title: "On The Quantity of Girls"
-subtitle: "A reproduction of On The Quailty and Quantity of Girls"
+subtitle: "A reproduction of On The Quality and Quantity of Girls"
 author: 
   - Jueun Kang
   - Joyce Xuan
